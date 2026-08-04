@@ -1,0 +1,530 @@
+/* ========================================
+   Live 1 — Desenvolvimento Frontend
+   CSS Externo | Rodrigo Braga
+   ======================================== */
+
+:root {
+  --brand-blue: #0056b3;
+  --brand-blue-dark: #003d80;
+  --brand-blue-light: #3d8bfd;
+  --ink: #0b1220;
+  --ink-soft: #3a4558;
+  --surface: #f4f7fb;
+  --surface-alt: #e8eef6;
+  --white: #ffffff;
+  --header-bg: #000000;
+  --footer-bg: #000000;
+  --radius: 12px;
+  --shadow: 0 12px 40px rgba(11, 18, 32, 0.08);
+  --font-display: "Outfit", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --transition: 0.25s ease;
+}
+
+/* Temas dinâmicos (prática JS + CSS) */
+body.tema-escuro {
+  --surface: #121820;
+  --surface-alt: #1a2330;
+  --ink: #e8eef6;
+  --ink-soft: #a8b4c4;
+  --white: #1a2330;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  background: #0d1218;
+  color: var(--ink);
+}
+
+body.tema-verde {
+  --brand-blue: #0d7a4f;
+  --brand-blue-dark: #085c3b;
+  --brand-blue-light: #2db87a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--brand-blue);
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--brand-blue-dark);
+}
+
+code {
+  font-size: 0.9em;
+  color: var(--brand-blue-dark);
+  background: rgba(0, 86, 179, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid rgba(0, 86, 179, 0.35);
+  z-index: 1030;
+}
+
+.site-header .navbar {
+  padding-block: 0.35rem;
+}
+
+.site-logo {
+  height: 88px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-dark .nav-link {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 8px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link:focus {
+  color: #fff;
+  background: rgba(0, 86, 179, 0.25);
+}
+
+.btn-nav {
+  background: var(--brand-blue) !important;
+  color: #fff !important;
+  margin-left: 0.35rem;
+}
+
+.btn-nav:hover {
+  background: var(--brand-blue-light) !important;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: min(78vh, 640px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0, 86, 179, 0.45), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(61, 139, 253, 0.2), transparent 50%),
+    linear-gradient(160deg, #000 0%, #0a1628 45%, #001a3a 100%);
+  animation: heroPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroPulse {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.92; transform: scale(1.03); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-block: 4.5rem 5rem;
+}
+
+.hero-live {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-blue-light);
+  margin-bottom: 0.75rem;
+  animation: fadeUp 0.7s ease both;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  max-width: 14ch;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Buttons ---------- */
+.btn-brand {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background: var(--brand-blue-dark);
+  border-color: var(--brand-blue-dark);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.35);
+}
+
+.btn-outline-brand {
+  border: 2px solid var(--brand-blue);
+  color: var(--brand-blue);
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.btn-outline-brand:hover {
+  background: var(--brand-blue);
+  color: #fff;
+  border-color: var(--brand-blue);
+}
+
+.text-brand {
+  color: var(--brand-blue) !important;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 4.5rem 0;
+  background: var(--surface);
+}
+
+.section-alt {
+  background: var(--surface-alt);
+}
+
+.section-head {
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--brand-blue);
+  margin-bottom: 0.5rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.section-head p {
+  color: var(--ink-soft);
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+/* ---------- Feature blocks ---------- */
+.feature-block {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  height: 100%;
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--brand-blue);
+  transition: transform var(--transition);
+}
+
+.feature-block:hover {
+  transform: translateY(-4px);
+}
+
+.feature-block i {
+  font-size: 1.75rem;
+  color: var(--brand-blue);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.feature-block h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-block p {
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Practice / preview ---------- */
+.practice-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.practice-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.practice-box h3 i {
+  color: var(--brand-blue);
+  margin-right: 0.35rem;
+}
+
+.preview-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.preview-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 0.75rem;
+}
+
+.preview-area {
+  min-height: 100px;
+  padding: 1.25rem;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px dashed rgba(0, 86, 179, 0.35);
+}
+
+.code-block {
+  background: #0b1220;
+  color: #b8d4f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.code-block code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* ---------- Mídia ---------- */
+.media-demo {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+.media-demo img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  background: #000;
+}
+
+.media-demo figcaption,
+.media-caption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 0.75rem;
+}
+
+.audio-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 260px;
+}
+
+/* ---------- CSS cards ---------- */
+.css-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: var(--shadow);
+}
+
+.css-card h3 {
+  font-size: 1.2rem;
+  color: var(--brand-blue);
+  margin-bottom: 0.75rem;
+}
+
+.css-externo-demo {
+  border: 2px solid var(--brand-blue);
+}
+
+/* ---------- Dúvidas ---------- */
+.duvidas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 120px;
+}
+
+.duvida-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--brand-blue);
+  animation: fadeUp 0.4s ease both;
+}
+
+.duvida-item strong {
+  color: var(--brand-blue);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.duvida-item p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.duvida-item time {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+}
+
+/* ---------- Valeu ---------- */
+.vale-section {
+  background: linear-gradient(135deg, #000 0%, #001a3a 100%);
+  padding: 3.5rem 0;
+  color: #fff;
+}
+
+.vale-text {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--brand-blue-light);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--footer-bg);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 86, 179, 0.35);
+}
+
+.footer-logo {
+  height: 72px;
+  width: auto;
+  opacity: 0.95;
+}
+
+.footer-copy {
+  font-size: 0.95rem;
+}
+
+.footer-copy strong {
+  color: var(--brand-blue-light);
+}
+
+.footer-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 0.25rem;
+}
+
+/* ---------- Form tweaks ---------- */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .site-logo {
+    height: 72px;
+  }
+
+  .navbar-nav {
+    padding-block: 0.75rem;
+  }
+
+  .btn-nav {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 0.35rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero-content {
+    padding-block: 3.5rem 4rem;
+  }
+}

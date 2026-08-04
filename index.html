@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live 1 — Desenvolvimento Frontend | Rodrigo Braga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- CSS Externo (tópico 7) -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- CSS Interno (tópico 7) -->
+  <style>
+    .demo-interno {
+      background: linear-gradient(135deg, #0a1628 0%, #123a6b 100%);
+      color: #fff;
+      border-left: 4px solid var(--brand-blue);
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== CABEÇALHO ========== -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+          <img src="assets/logo.png" alt="Rodrigo Braga Tere" class="site-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#ambiente">Ambiente</a></li>
+            <li class="nav-item"><a class="nav-link" href="#html">HTML</a></li>
+            <li class="nav-item"><a class="nav-link" href="#midia">Mídia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tabelas">Tabelas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#formularios">Formulários</a></li>
+            <li class="nav-item"><a class="nav-link" href="#css">CSS</a></li>
+            <li class="nav-item"><a class="nav-link btn-nav" href="#duvidas">Dúvidas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="hero-live">Live 1</p>
+        <h1 class="hero-title">Desenvolvimento Frontend</h1>
+        <p class="hero-lead">Demonstração prática de HTML5, CSS, Bootstrap e JavaScript — do ambiente de programação aos estilos.</p>
+        <div class="hero-actions">
+          <a href="#ambiente" class="btn btn-brand btn-lg">Começar a prática</a>
+          <a href="https://www.w3schools.com/" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">W3Schools</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1. AMBIENTE DE PROGRAMAÇÃO ========== -->
+    <section id="ambiente" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2>Ambiente de Programação</h2>
+          <p>IDE é um acrônimo para <strong>Integrated Development Environment</strong> — Ambiente de Desenvolvimento Integrado. É um software com editor, compilador, depurador e outras ferramentas que otimizam a programação.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="feature-block">
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
+              <h3>Editor de código</h3>
+              <p>Escreva e organize HTML, CSS e JavaScript com destaque de sintaxe.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-block">
+              <i class="bi bi-gear" aria-hidden="true"></i>
+              <h3>Compilador / Build</h3>
+              <p>Transforma e prepara o código para execução no navegador.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-block">
+              <i class="bi bi-bug" aria-hidden="true"></i>
+              <h3>Debugger</h3>
+              <p>Localiza e corrige erros durante o desenvolvimento.</p>
+            </article>
+          </div>
+        </div>
+        <div class="practice-box mt-4">
+          <h3><i class="bi bi-lightning-charge"></i> Prática — Ambiente</h3>
+          <p class="mb-3">Selecione as ferramentas da sua IDE e veja o resumo em tempo real.</p>
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label for="ideSelect" class="form-label">Sua IDE</label>
+              <select id="ideSelect" class="form-select">
+                <option value="">Escolha...</option>
+                <option value="VS Code">Visual Studio Code</option>
+                <option value="Cursor">Cursor</option>
+                <option value="WebStorm">WebStorm</option>
+                <option value="Sublime Text">Sublime Text</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="navegadorSelect" class="form-label">Navegador</label>
+              <select id="navegadorSelect" class="form-select">
+                <option value="">Escolha...</option>
+                <option value="Chrome">Google Chrome</option>
+                <option value="Firefox">Mozilla Firefox</option>
+                <option value="Edge">Microsoft Edge</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <button type="button" id="btnAmbiente" class="btn btn-brand w-100">Registrar ambiente</button>
+            </div>
+          </div>
+          <div id="resultadoAmbiente" class="alert alert-info mt-3 d-none" role="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 2. CONCEITOS BÁSICOS DO HTML ========== -->
+    <section id="html" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2>Conceitos básicos do HTML</h2>
+          <p>HTML estrutura o conteúdo da página com tags. Referência oficial de estudo: <a href="https://www.w3schools.com/" target="_blank" rel="noopener">w3schools.com</a>.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="practice-box h-100">
+              <h3><i class="bi bi-filetype-html"></i> Prática HTML — básico</h3>
+              <p>Altere o texto e o nível do título para ver a renderização.</p>
+              <label for="tituloInput" class="form-label">Texto do título</label>
+              <input type="text" id="tituloInput" class="form-control mb-3" value="Olá, mundo Frontend!">
+              <label for="nivelTitulo" class="form-label">Nível da tag</label>
+              <select id="nivelTitulo" class="form-select mb-3">
+                <option value="h1">&lt;h1&gt;</option>
+                <option value="h2" selected>&lt;h2&gt;</option>
+                <option value="h3">&lt;h3&gt;</option>
+                <option value="p">&lt;p&gt;</option>
+              </select>
+              <button type="button" id="btnHtml" class="btn btn-brand">Renderizar</button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="preview-box h-100">
+              <p class="preview-label">Pré-visualização</p>
+              <div id="htmlPreview" class="preview-area">
+                <h2>Olá, mundo Frontend!</h2>
+              </div>
+              <pre id="htmlCodigo" class="code-block mt-3"><code>&lt;h2&gt;Olá, mundo Frontend!&lt;/h2&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3. MÍDIA COM HTML ========== -->
+    <section id="midia" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <h2>Mídia com HTML</h2>
+          <p>O HTML é baseado em <strong>hipertexto</strong>: elementos ligados por conexões — palavras, imagens, vídeos, áudio e documentos — formando uma grande rede de informação.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <figure class="media-demo">
+              <img src="assets/logo.png" alt="Logo Rodrigo Braga" class="img-fluid rounded">
+              <figcaption>Imagem — tag <code>&lt;img&gt;</code></figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4">
+            <div class="media-demo">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/3zwfxkIXI0k" title="Vídeo — Desenvolvimento Frontend" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <p class="media-caption mt-2 mb-0">Vídeo — tag <code>&lt;iframe&gt;</code> / <code>&lt;video&gt;</code></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="media-demo audio-demo">
+              <i class="bi bi-music-note-beamed display-4 text-brand"></i>
+              <p class="mt-2 mb-3">Áudio embutido</p>
+              <audio controls class="w-100">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+              </audio>
+              <p class="media-caption mt-2 mb-0">Áudio — tag <code>&lt;audio&gt;</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. TABELAS ========== -->
+    <section id="tabelas" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">04</span>
+          <h2>Montando tabelas com HTML</h2>
+          <p>Uma tabela é um conjunto estruturado de dados em linhas e colunas. Facilita relacionar informações — por exemplo, uma pessoa e sua idade, ou um horário no dia da semana.</p>
+        </div>
+        <div class="table-responsive practice-box">
+          <table class="table table-striped table-hover align-middle mb-0" id="tabelaAlunos">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Aluno</th>
+                <th scope="col">Módulo</th>
+                <th scope="col">Status</th>
+                <th scope="col">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Ana Silva</td>
+                <td>HTML Básico</td>
+                <td><span class="badge text-bg-success">Concluído</span></td>
+                <td>9.5</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Bruno Costa</td>
+                <td>Mídia HTML</td>
+                <td><span class="badge text-bg-warning">Em andamento</span></td>
+                <td>7.0</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Carla Mendes</td>
+                <td>Formulários</td>
+                <td><span class="badge text-bg-success">Concluído</span></td>
+                <td>8.8</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Diego Rocha</td>
+                <td>CSS Estilos</td>
+                <td><span class="badge text-bg-secondary">Pendente</span></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-3 d-flex flex-wrap gap-2">
+          <button type="button" id="btnFiltrarConcluidos" class="btn btn-outline-brand btn-sm">Filtrar concluídos</button>
+          <button type="button" id="btnMostrarTodos" class="btn btn-outline-secondary btn-sm">Mostrar todos</button>
+          <span id="infoTabela" class="align-self-center text-muted small"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. FORMULÁRIOS ========== -->
+    <section id="formularios" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">05</span>
+          <h2>Criação de formulários com HTML</h2>
+          <p>Prática 5/6 — campos de texto, seleção, opções e envio de dados.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <form id="formInscricao" class="practice-box" novalidate>
+              <h3 class="mb-4"><i class="bi bi-ui-checks"></i> Inscrição na Live</h3>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nome" class="form-label">Nome completo *</label>
+                  <input type="text" class="form-control" id="nome" name="nome" required placeholder="Seu nome">
+                  <div class="invalid-feedback">Informe o nome.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">E-mail *</label>
+                  <input type="email" class="form-control" id="email" name="email" required placeholder="voce@email.com">
+                  <div class="invalid-feedback">Informe um e-mail válido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="modulo" class="form-label">Módulo de interesse</label>
+                  <select class="form-select" id="modulo" name="modulo">
+                    <option value="html">HTML básico</option>
+                    <option value="midia">Mídia</option>
+                    <option value="tabelas">Tabelas</option>
+                    <option value="forms">Formulários</option>
+                    <option value="css">CSS</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="experiencia" class="form-label">Experiência</label>
+                  <input type="range" class="form-range" id="experiencia" name="experiencia" min="0" max="10" value="3">
+                  <small class="text-muted">Nível: <span id="nivelExp">3</span>/10</small>
+                </div>
+                <div class="col-12">
+                  <label class="form-label d-block">Preferência de horário</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="horario" id="manha" value="manhã" checked>
+                    <label class="form-check-label" for="manha">Manhã</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="horario" id="tarde" value="tarde">
+                    <label class="form-check-label" for="tarde">Tarde</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="horario" id="noite" value="noite">
+                    <label class="form-check-label" for="noite">Noite</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="mensagem" class="form-label">Mensagem</label>
+                  <textarea class="form-control" id="mensagem" name="mensagem" rows="3" placeholder="Dúvidas ou objetivos..."></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="termos" required>
+                    <label class="form-check-label" for="termos">Concordo em participar da demonstração *</label>
+                    <div class="invalid-feedback">É necessário concordar.</div>
+                  </div>
+                </div>
+                <div class="col-12 d-flex gap-2">
+                  <button type="submit" class="btn btn-brand">Enviar inscrição</button>
+                  <button type="reset" class="btn btn-outline-secondary">Limpar</button>
+                </div>
+              </div>
+              <div id="formSucesso" class="alert alert-success mt-3 d-none" role="status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. CSS — ESTILOS ========== -->
+    <section id="css" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">07</span>
+          <h2>CSS — Entendendo sobre estilos</h2>
+          <p>Prática 7 — três formas de aplicar CSS: <strong>Inline</strong>, <strong>Interno</strong> e <strong>Externo</strong>.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="css-card">
+              <h3>Inline</h3>
+              <p>Estilo aplicado diretamente no atributo <code>style</code> da tag.</p>
+              <p style="color: #0056b3; font-weight: 700; font-size: 1.1rem; margin: 0;">
+                Este texto usa CSS inline.
+              </p>
+              <pre class="code-block mt-3 mb-0"><code>&lt;p style="color: #0056b3;"&gt;...&lt;/p&gt;</code></pre>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="css-card demo-interno p-4 rounded-3">
+              <h3>Interno</h3>
+              <p>Regras dentro de <code>&lt;style&gt;</code> no <code>&lt;head&gt;</code> desta página.</p>
+              <p class="mb-0">Este bloco usa a classe <code>.demo-interno</code> definida internamente.</p>
+              <pre class="code-block mt-3 mb-0"><code>&lt;style&gt;
+  .demo-interno { ... }
+&lt;/style&gt;</code></pre>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="css-card css-externo-demo">
+              <h3>Externo</h3>
+              <p>Arquivo separado (<code>css/styles.css</code>) ligado com <code>&lt;link&gt;</code>.</p>
+              <p class="mb-0">Toda a identidade visual deste site vem do CSS externo.</p>
+              <pre class="code-block mt-3 mb-0"><code>&lt;link rel="stylesheet"
+  href="css/styles.css"&gt;</code></pre>
+            </article>
+          </div>
+        </div>
+        <div class="practice-box mt-4">
+          <h3><i class="bi bi-palette"></i> Prática — troque o tema</h3>
+          <p>JavaScript altera classes do CSS externo em tempo real.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn btn-brand btn-tema" data-tema="azul">Azul royal</button>
+            <button type="button" class="btn btn-dark btn-tema" data-tema="escuro">Escuro</button>
+            <button type="button" class="btn btn-success btn-tema" data-tema="verde">Verde</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LR1 — DÚVIDAS ========== -->
+    <section id="duvidas" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">LR1</span>
+          <h2>Dúvidas — Desenvolvimento Frontend</h2>
+          <p>Envie sua pergunta sobre a live. As dúvidas ficam listadas abaixo (somente nesta sessão).</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <form id="formDuvida" class="practice-box">
+              <label for="nomeDuvida" class="form-label">Seu nome</label>
+              <input type="text" id="nomeDuvida" class="form-control mb-3" required placeholder="Nome">
+              <label for="textoDuvida" class="form-label">Sua dúvida</label>
+              <textarea id="textoDuvida" class="form-control mb-3" rows="4" required placeholder="Ex.: Qual a diferença entre CSS interno e externo?"></textarea>
+              <button type="submit" class="btn btn-brand">Publicar dúvida</button>
+            </form>
+            <div class="mt-4">
+              <a class="btn btn-outline-brand" href="https://docs.google.com/forms/d/e/1FAIpQLSd7qQYQg-a8_fzSCrfSB1gA_M4tQ9pXxzYUPZOjrM_4PAe8VQ/viewform" target="_blank" rel="noopener">
+                <i class="bi bi-clipboard-check"></i> Avaliação da Live — aluno
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div id="listaDuvidas" class="duvidas-lista">
+              <p class="text-muted mb-0" id="duvidasVazio">Nenhuma dúvida ainda. Seja o primeiro!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vale-section">
+      <div class="container text-center">
+        <p class="vale-text">Valeu ✌</p>
+        <p class="mb-0 text-white-50">Obrigado por acompanhar a Live 1 de Desenvolvimento Frontend.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-6 text-center text-md-start">
+          <img src="assets/logo.png" alt="" class="footer-logo" aria-hidden="true">
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="footer-copy mb-0">&copy; <span id="anoAtual"></span> <strong>@RodrigoBraga</strong> — Todos os direitos reservados.</p>
+          <p class="footer-sub mb-0">Live 1 · Desenvolvimento Frontend</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
